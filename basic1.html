@@ -26,29 +26,31 @@
 
 		p{	
 			font-size: 32px;
-			color: red;
 			text-align: center;
 			margin-top: 10%;
 		}
-
+ 
    </style>
 </head>
 
 <body>
 	<div class="boxes">
-	<div class="box" text="You clicked on the Christmas gift"> <img src="img/gift.png" alt="gift"></div>
+	<div class="box" text="You clicked on the Christmas gift" color="red" borderRadius="60px"> <img src="img/gift.png" alt="gift"></div>
 
-	<div class="box" text="You clicked on the Santa Claus"> <img src="img/santa.png" alt="santa claus"></div>
+	<div class="box" text="You clicked on the Santa Claus" color="green" borderRadius="60px"> <img src="img/santa.png" alt="santa claus"></div>
 
-	<div class="box" text="You clicked on the Christmas bell"> <img src="img/bell.png" alt="bell"></div>
+	<div class="box" text="You clicked on the Christmas bell" color="blue" borderRadius="60px"> <img src="img/bell.png" alt="bell"></div>
 	</div>
 	<p id="result"></p>
     <script>
 
 	$(document).ready(function(){
 		$('.box').on('click', function() {
-			$a = $(this).attr("text");
-            $("#result").text($a);
+			$r = $(this).attr("borderRadius"); // create a r variable with the attribute border radius
+			$a = $(this).attr("text"); // create a variable which have the attribute text
+			$b= $(this).attr("color") // create a varibale which have the attribute color 
+            $("#result").text($a).css("color",$b); // display the result with the variables text and color
+            $(this).css("border-radius",$r); // change the border radius using the r variable 
 
 		})
 	 });
