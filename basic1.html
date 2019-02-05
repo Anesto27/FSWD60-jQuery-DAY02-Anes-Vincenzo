@@ -4,13 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Day 02 basic 1</title>
-    <src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script> <link>
-        </link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script> 
+    <style>
+
+    	.boxes{
+    		display: flex;
+    		justify-content: space-around;
+    		margin-top: 50px;
+    	}
+		
+		.box{
+			border: 1px solid black;
+			width: 200px;
+			height: 200px;
+		}
+
+		.box img{
+			width: 200px;
+			height: 200px;
+		}
+
+   </style>
 </head>
 
 <body>
+	<div class="boxes">
+	<div class="box" text="You clicked on the Christmas gift"> <img src="img/gift.png" alt="gift"></div>
+
+	<div class="box" text="You clicked on the Santa Claus"> <img src="img/santa.png" alt="santa claus"></div>
+
+	<div class="box" text="You clicked on the Christmas bell"> <img src="img/bell.png" alt="bell"></div>
+	</div>
+	<p id="result"></p>
     <script>
-    	
+
+	$(document).ready(function(){
+		$('.box').on('click', function() {
+			$a = $(this).attr("text");
+            $("#result").text($a);
+
+		})
+	 });
+
     </script>
 </body>
 
