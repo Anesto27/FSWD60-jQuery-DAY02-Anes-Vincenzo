@@ -18,7 +18,7 @@
 		.box{
 			width: 150px;
 			height: 180px;
-			border: 1px solid black;
+			border: 2px solid black;
 		}
 
 		.box2{
@@ -35,12 +35,32 @@
 		.box3{
 			width: 150px;
 			height: 75px;
-			border: 1px solid black;
+			border-top: 1px solid black;
 		}
 
 		.box3 p{
 			font-size: 12pt;
 			text-align: center;
+		}
+		button{
+			width: 40px;
+			height: 20px;
+			margin-left: 50px;
+		}
+
+		.box4{
+			border: 2px solid black;
+			width: 500px;
+			height: 300px;
+			margin-left: 32%;
+			margin-top: 10%;
+			overflow: scroll;
+		}
+
+		.box4 p{
+			text-align: center;
+			font-size: 20pt;
+
 		}
 
 	</style>
@@ -52,19 +72,33 @@
 
 	<div class="container">
 	<div class="shoppingCart"></div>
+	<div class="box4"><p>Inside the Shoppingcart you have:</p></div>
+
 	</div>
 	<script>
 		var pic=["img_intermediate/2banana.png","img_intermediate/banana.png","img_intermediate/cake.jpg","img_intermediate/icecream.jpg","img_intermediate/pancake.jpg","img_intermediate/pudding.jpg","img_intermediate/strawberry.jpg"];
 
-		for (i=1; i<8; i++) {
-		$(".shoppingCart").append("<div> <div class='box2'><img src='"+pic[i-1]+"'><div class='box3'><p>"+grocery[i].item+"<br>"+grocery[i].price+"<br>"+grocery[i].stock+"</p></div></div> </div>");
+		for (i=0; i<grocery.length; i++) {
+		$(".shoppingCart").append("<div><div class='box2'><img src='"+pic[i]+"'><div class='box3'><p>"+grocery[i].name+"<br>"+grocery[i].price+"<br>"+grocery[i].stock+"</p><button class='btn' itemName='"+grocery[i].name+'<br>'+"'>buy</button></div></div> </div>");
 
-		$(".shoppingCart > div:eq("+(i-1)+")").addClass("box");
+		$(".shoppingCart > div:eq("+(i)+")").addClass("box");
 
-		$(".box2")
+}
 
-		}
 
+	$(document).ready(function(){
+
+	$(".btn").click(function(){
+		var a = $(this).attr("itemName");
+		$(".box4").append("<h4 class='remove'>"+a+"</h4>");
+		$(".remove").click(function(){
+			$(this).remove();
+		})	
+
+	})
+
+		
+	});
 	</script>
 </body>
 </html>
