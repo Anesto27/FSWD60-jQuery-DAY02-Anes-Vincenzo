@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Day 02 Intermediate</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+	<style>
+		.container{
+			width: 100%;
+			height: auto;
+			
+			
+		}
+		.shoppingCart{
+			display: flex;
+			justify-content: space-between;
+		}
+		.box{
+			width: 150px;
+			height: 150px;
+			border: 1px solid black;
+		}
+
+		.box2{
+			width: 150px;
+			height: 100px;
+			
+		}
+
+		.box2 img{
+			width: 150px;
+			height: 100px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+	<div class="shoppingCart"></div>
+	</div>
+	<script>
+		var pic=["img_intermediate/2banana.png","img_intermediate/banana.png","img_intermediate/cake.jpg","img_intermediate/icecream.jpg","img_intermediate/pancake.jpg","img_intermediate/pudding.jpg","img_intermediate/strawberry.jpg"];
+
+		for (i=1; i<8; i++) {
+		$(".shoppingCart").append("<div> <div class='box2'><img src='"+pic[i-1]+"'></div> </div>");
+
+		$(".shoppingCart > div:eq("+(i-1)+")").addClass("box");
+
+		}
+
+	</script>
+</body>
+</html>
