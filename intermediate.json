@@ -1,0 +1,48 @@
+grocery=[{
+	"item": "banana",
+	"price": "1$",
+	"stock": "3000",
+	
+},
+	{
+	"item": "banana",
+	"price": "2$",
+	"stock": "2000",
+	
+	},
+	
+{
+	"item": "cake",
+	"price": "2,50$",
+	"stock": "3000",
+	
+	},
+	
+{
+	"item": "icecream",
+	"price": "3$",
+	"stock": "400",
+	
+	},
+	
+{
+	"item": "pancake",
+	"price": "2$",
+	"stock": "3000",
+	
+	},
+	
+{
+	"item": "pudding",
+	"price": "3$",
+	"stock": "100",
+	
+	},
+	
+{
+	"item": "strawberry",
+	"price": "10$",
+	"stock": "10000",
+
+}
+];
